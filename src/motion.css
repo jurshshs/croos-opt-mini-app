@@ -1,0 +1,61 @@
+/* Short, composited motion keeps the Mini App responsive in Telegram WebView. */
+.brand{gap:7px;letter-spacing:-.8px}
+.brand-logo{display:block;width:38px;height:38px;object-fit:contain;border-radius:8px;flex:none}
+.brand>span{white-space:nowrap}
+.splash{position:fixed;z-index:100;inset:0;display:grid;place-items:center;background:#090909;overflow:hidden;opacity:1;transition:opacity 240ms ease,visibility 240ms ease}
+.splash-exit{opacity:0;visibility:hidden;pointer-events:none}
+.splash-glow{position:absolute;width:min(110vw,550px);aspect-ratio:1;background:radial-gradient(circle,#8b6e00 0%,#342900 36%,transparent 69%);opacity:.55;animation:splash-glow 520ms ease-out both}
+.splash img{position:relative;width:min(66vw,260px);height:auto;aspect-ratio:1;object-fit:contain;border-radius:26px;box-shadow:0 20px 85px #000a,0 0 42px #ffd00033;animation:splash-logo 520ms cubic-bezier(.2,.75,.2,1) both}
+@keyframes splash-logo{from{opacity:0;transform:scale(.86) translateY(12px)}to{opacity:1;transform:scale(1) translateY(0)}}
+@keyframes splash-glow{from{opacity:0;transform:scale(.7)}to{opacity:.55;transform:scale(1)}}
+.page-enter{animation:page-in 220ms ease-out both}
+@keyframes page-in{from{opacity:.45;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.bottom-nav button,.bottom-nav button svg,.icon-button,.brand,.category-tile,.product-card,.product-card img,.chips button,.size-grid button,.yellow-button,.small-yellow,.profile-row,.admin-item,.admin-order,.fav,.gallery-fav{transition:transform 180ms ease,background-color 180ms ease,border-color 180ms ease,color 180ms ease,box-shadow 180ms ease,opacity 180ms ease}
+.bottom-nav button.active svg{transform:translateY(-3px) scale(1.12)}
+.bottom-nav button:active svg,.icon-button:active,.category-tile:active,.fav:active,.gallery-fav:active{transform:scale(.9)}
+.yellow-button:active,.small-yellow:active{transform:translateY(3px) scale(.98);box-shadow:0 1px 0 #b89000}
+.category-tile:active,.product-card:active{transform:scale(.975)}
+.chips button:active,.size-grid button:active{transform:scale(.94)}
+.chips button.active{box-shadow:0 0 0 3px #ffd00022}
+.size-grid button.active{box-shadow:0 0 0 3px #ffd00033;animation:size-select 220ms ease-out}
+@keyframes size-select{50%{transform:scale(1.08)}}
+.product-card{animation:card-in 270ms both;animation-delay:calc(var(--card-order,0) * 28ms)}
+@keyframes card-in{from{opacity:0;transform:translateY(13px) scale(.985)}to{opacity:1;transform:translateY(0) scale(1)}}
+.product-image{position:relative;overflow:hidden}
+.product-image .image-skeleton{position:absolute;inset:0;z-index:1;background:linear-gradient(105deg,#d1d1d1 8%,#efefef 25%,#d1d1d1 42%);background-size:210% 100%;animation:skeleton 1.2s linear infinite;transition:opacity 180ms ease}
+.product-image .image-skeleton.loaded{opacity:0;pointer-events:none}
+@keyframes skeleton{to{background-position-x:-210%}}
+.product-image img.photo-loading{opacity:0}
+.product-image img.photo-ready{opacity:1}
+.product-image:active img.photo-ready{transform:scale(1.045)}
+.product-gallery{touch-action:pan-y;overflow:hidden}
+.product-gallery img.gallery-photo{animation:gallery-in 240ms ease-out both}
+@keyframes gallery-in{from{opacity:.45;transform:scale(1.025)}to{opacity:1;transform:scale(1)}}
+.gallery-dots button{transition:width 180ms ease,background-color 180ms ease}
+.badge-pop,.value-pop{animation:pop 260ms ease-out both}
+@keyframes pop{0%{transform:scale(.65);opacity:.45}65%{transform:scale(1.17);opacity:1}100%{transform:scale(1)}}
+.cart-item{animation:cart-enter 230ms ease-out both;transform-origin:top center;transition:opacity 170ms ease,transform 170ms ease,max-height 170ms ease,margin 170ms ease,padding 170ms ease;max-height:160px;overflow:hidden}
+.cart-item.leaving{opacity:0;transform:translateX(15px) scale(.97);max-height:0;margin:0;padding-top:0;padding-bottom:0}
+@keyframes cart-enter{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:translateY(0)}}
+.toast{position:fixed;z-index:60;left:50%;bottom:calc(87px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(calc(100% - 32px),480px);min-height:51px;display:flex;align-items:center;gap:10px;background:#252525;color:#fff;border:1px solid #ffd00088;border-radius:13px;box-shadow:0 13px 40px #000a;padding:8px 11px;font-size:12px;font-weight:700;animation:toast-in 260ms ease-out both}
+.toast>span{display:grid;place-items:center;width:27px;height:27px;background:#ffd000;color:#111;border-radius:50%}
+.toast button{margin-left:auto;border:0;background:none;color:#aaa;display:grid;place-items:center}
+@keyframes toast-in{from{opacity:0;transform:translate(-50%,14px) scale(.97)}to{opacity:1;transform:translate(-50%,0) scale(1)}}
+.checkout-progress{display:flex;gap:8px;margin-bottom:22px}
+.checkout-progress span{flex:1;padding:10px 8px;background:#242424;border:1px solid #3d3d3d;border-radius:8px;text-align:center;color:#999;font-size:10px;font-weight:700;transition:background-color 200ms,color 200ms,border-color 200ms}
+.checkout-progress span.active{background:#ffd000;color:#111;border-color:#ffd000}
+.checkout-progress span.done{color:#ffd000;border-color:#866f00}
+.checkout-panel{animation:page-in 230ms ease-out both}
+.checkout-panel>.text-link{margin:3px 0 12px;padding:0}
+.form-error{animation:error-in 250ms ease-out both}
+@keyframes error-in{0%,60%,100%{transform:translateX(0)}25%{transform:translateX(-4px)}45%{transform:translateX(4px)}80%{transform:translateX(2px)}}
+.success-icon{animation:success-icon 330ms cubic-bezier(.2,1.3,.4,1) both}
+.success-icon svg{animation:success-check 300ms 160ms ease-out both}
+@keyframes success-icon{from{opacity:0;transform:scale(.45) rotate(-12deg)}to{opacity:1;transform:scale(1) rotate(0)}}
+@keyframes success-check{from{opacity:0;transform:scale(.55)}to{opacity:1;transform:scale(1)}}
+.receipt{animation:page-in 260ms ease-out both}
+.admin-item,.admin-order{animation:card-in 260ms ease-out both}
+.admin-item:active,.profile-row:active{background:#303030;transform:scale(.99)}
+.admin-stats strong,.status{transition:color 180ms,background-color 180ms,transform 180ms}
+@media(hover:hover){.product-card:hover{transform:translateY(-3px);border-color:#555;box-shadow:0 10px 25px #0006}.product-card:hover .photo-ready{transform:scale(1.04)}.category-tile:hover{transform:translateY(-2px);border-color:#686039}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}

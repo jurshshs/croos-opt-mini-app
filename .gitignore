@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.vercel/
+*.log
+smoke-*.png
+hero-*.png
+tools/smoke.mjs
+.env
+.env.*

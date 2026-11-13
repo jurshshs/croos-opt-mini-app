@@ -1,0 +1,1794 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-11-13T08:09:12.411Z",
+  "sellerUrl": "https://www.kufar.by/user/O_mSgGGLqUdA7MbbfOKbdro",
+  "categories": [
+    {
+      "id": "shoes",
+      "label": "Обувь",
+      "count": 7
+    },
+    {
+      "id": "jeans-pants",
+      "label": "Джинсы и брюки",
+      "count": 1
+    },
+    {
+      "id": "other",
+      "label": "Другое",
+      "count": 5
+    },
+    {
+      "id": "jackets",
+      "label": "Куртки и пуховики",
+      "count": 13
+    },
+    {
+      "id": "hoodies",
+      "label": "Худи и толстовки",
+      "count": 1
+    },
+    {
+      "id": "sweatshirts",
+      "label": "Свитшоты и кофты",
+      "count": 2
+    }
+  ],
+  "products": [
+    {
+      "id": "kufar-960be46af1d4",
+      "sourceId": "960be46af1d4",
+      "slug": "кроссовки-adidas-x-jeremy-scott-black-product-001",
+      "sourceUrl": "https://www.kufar.by/item/1094173337",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1094173337",
+      "title": "Кроссовки Adidas x Jeremy Scott black",
+      "price": {
+        "amount": 179.99,
+        "currency": "BYN",
+        "raw": "179.99 р."
+      },
+      "size": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "colors": [
+        "ЧерныйСезонДемиСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Деми Состояние Нов"
+      ],
+      "description": "Kроcсовки Люкс кaчecтвoКаждая пaра в оригинальнoй кoробке. Полный комплект.Пoлный кoмплeктШтрихи и биpкиРазмeры 40, 41, 42, 43, 44, 45Отправка бел или евро почтой По заказам пишите в директ",
+      "category": {
+        "id": "shoes",
+        "label": "Обувь",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-960be46af1d4/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/9b121bdb-ec5c-4be9-b08e-df344efd18c4.jpg"
+        },
+        {
+          "localPath": "images/kufar-960be46af1d4/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/a4bca77a-3fc2-4ad1-8d75-23266e209436.jpg"
+        },
+        {
+          "localPath": "images/kufar-960be46af1d4/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/ec70a7f4-72e9-4678-874f-073e4274d4cd.jpg"
+        },
+        {
+          "localPath": "images/kufar-960be46af1d4/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/abcd8eb4-fbbd-4b61-9668-8d5475c5839e.jpg"
+        },
+        {
+          "localPath": "images/kufar-960be46af1d4/05.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/283062f4-90a6-4129-a031-0148a921ef22.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/9b121bdb-ec5c-4be9-b08e-df344efd18c4.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/a4bca77a-3fc2-4ad1-8d75-23266e209436.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/ec70a7f4-72e9-4678-874f-073e4274d4cd.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/abcd8eb4-fbbd-4b61-9668-8d5475c5839e.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/283062f4-90a6-4129-a031-0148a921ef22.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:00:51.457Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-381260a66ce3",
+      "sourceId": "381260a66ce3",
+      "slug": "штаны-nike-nsw-reflective-product-002",
+      "sourceUrl": "https://www.kufar.by/item/1093691376",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093691376",
+      "title": "Штаны Nike NSW Reflective",
+      "price": {
+        "amount": 99.99,
+        "currency": "BYN",
+        "raw": "99.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонДемиСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Деми Состояние Нов"
+      ],
+      "description": "Лучший вариант . Топовая модель, которую хочется всем! Успей забрать!Paзмеры: S, M, L, XL, XXLLUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "jeans-pants",
+        "label": "Джинсы и брюки",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-381260a66ce3/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/ab7ad3ec-7712-462f-8278-a10adc23b714.jpg"
+        },
+        {
+          "localPath": "images/kufar-381260a66ce3/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/5d61c151-7514-4f0f-9c2a-f8b2c779eed2.jpg"
+        },
+        {
+          "localPath": "images/kufar-381260a66ce3/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/7baef170-46b1-41f0-ba25-254393060f30.jpg"
+        },
+        {
+          "localPath": "images/kufar-381260a66ce3/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/6bc4bd6f-a0d1-47a8-a30e-add9f23ce026.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/ab7ad3ec-7712-462f-8278-a10adc23b714.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/5d61c151-7514-4f0f-9c2a-f8b2c779eed2.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/7baef170-46b1-41f0-ba25-254393060f30.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/6bc4bd6f-a0d1-47a8-a30e-add9f23ce026.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:00:56.694Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-a1005ad302e2",
+      "sourceId": "a1005ad302e2",
+      "slug": "костюм-supreme-утепленный-product-003",
+      "sourceUrl": "https://www.kufar.by/item/1093691198",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093691198",
+      "title": "Костюм Supreme утепленный",
+      "price": {
+        "amount": 200,
+        "currency": "BYN",
+        "raw": "200 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "СерыйСезонДемиСостояниеНовоеТов",
+        "Серый",
+        "Серый Сезон Деми Состояние Ново"
+      ],
+      "description": "Лучший вариант . Топовая модель, которую хочется всем! Успей забрать!Paзмеры: S, M, L, XL, XXLПлотнaя набивка на зимy LUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "other",
+        "label": "Другое",
+        "source": "fallback"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-a1005ad302e2/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/03c389cd-07f8-47b9-8afb-49c96d250b9d.jpg"
+        },
+        {
+          "localPath": "images/kufar-a1005ad302e2/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/7398f98c-36f1-4d72-b6ef-ebc88e163437.jpg"
+        },
+        {
+          "localPath": "images/kufar-a1005ad302e2/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/8b966f45-d2f3-4e01-9261-e6145b921e7b.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/03c389cd-07f8-47b9-8afb-49c96d250b9d.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/7398f98c-36f1-4d72-b6ef-ebc88e163437.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/8b966f45-d2f3-4e01-9261-e6145b921e7b.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:01:01.109Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-9ed1a6ab29dc",
+      "sourceId": "9ed1a6ab29dc",
+      "slug": "костюм-supreme-утеплённый-product-004",
+      "sourceUrl": "https://www.kufar.by/item/1093691059",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093691059",
+      "title": "Костюм Supreme утеплённый",
+      "price": {
+        "amount": 199.99,
+        "currency": "BYN",
+        "raw": "199.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонДемиСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Деми Состояние Нов"
+      ],
+      "description": "Лучший вариант . Топовая модель, которую хочется всем! Успей забрать!На флисе Paзмеры: S, M, L, XL, XXLПлотнaя набивка на зимy LUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "other",
+        "label": "Другое",
+        "source": "fallback"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-9ed1a6ab29dc/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/967596a0-d9ef-489f-be01-d966ebf29fb3.jpg"
+        },
+        {
+          "localPath": "images/kufar-9ed1a6ab29dc/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/1e6b11fe-84e6-45e1-bbaa-9a7bbbecaf75.jpg"
+        },
+        {
+          "localPath": "images/kufar-9ed1a6ab29dc/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/157692c7-280a-4abc-8b10-cf1d82d72290.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/967596a0-d9ef-489f-be01-d966ebf29fb3.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/1e6b11fe-84e6-45e1-bbaa-9a7bbbecaf75.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/157692c7-280a-4abc-8b10-cf1d82d72290.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:01:05.098Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-02e0da1f5e61",
+      "sourceId": "02e0da1f5e61",
+      "slug": "пуховик-jordan-x-supreme-product-005",
+      "sourceUrl": "https://www.kufar.by/item/1093687005",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093687005",
+      "title": "Пуховик Jordan x Supreme",
+      "price": {
+        "amount": 210,
+        "currency": "BYN",
+        "raw": "210 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "БелыйСезонЗимаСостояниеНовоеТов",
+        "Белый",
+        "Белый Сезон Зима Состояние Ново",
+        "Гомель"
+      ],
+      "description": "Лучший вариант . Топовая модель, которую хочется всем! Успей забрать!Paзмеры: S, M, L, XL, XXLПлотнaя набивка на зимy LUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-02e0da1f5e61/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/75cc3d0d-69bd-491c-a167-104f23fc9897.jpg"
+        },
+        {
+          "localPath": "images/kufar-02e0da1f5e61/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/0a565a0f-305c-4110-979c-c671586b5d23.jpg"
+        },
+        {
+          "localPath": "images/kufar-02e0da1f5e61/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/35a482c6-2f1f-4de4-82a5-27415c99d51b.jpg"
+        },
+        {
+          "localPath": "images/kufar-02e0da1f5e61/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/8f828083-451f-440e-81ab-27393be76a46.jpg"
+        },
+        {
+          "localPath": "images/kufar-02e0da1f5e61/05.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/f03bbde2-1ebc-4613-a395-d079eea91af5.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/75cc3d0d-69bd-491c-a167-104f23fc9897.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/0a565a0f-305c-4110-979c-c671586b5d23.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/35a482c6-2f1f-4de4-82a5-27415c99d51b.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/8f828083-451f-440e-81ab-27393be76a46.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/f03bbde2-1ebc-4613-a395-d079eea91af5.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:01:09.831Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-e19e1bd5ef77",
+      "sourceId": "e19e1bd5ef77",
+      "slug": "кроссовки-salomon-xt6-product-006",
+      "sourceUrl": "https://www.kufar.by/item/1093672980",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093672980",
+      "title": "Кроссовки Salomon XT6",
+      "price": {
+        "amount": 119.99,
+        "currency": "BYN",
+        "raw": "119.99 р."
+      },
+      "size": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "colors": [],
+      "description": "Мы предлагаем стильные кроссовки в размерах от 41 до 45. Качество на первом месте! Отправка бел или евро почтой Яндекс доставкой по городу По интересующим вопросам пишите в ЛС",
+      "category": {
+        "id": "shoes",
+        "label": "Обувь",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-e19e1bd5ef77/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/47bd20fe-1be6-43c0-abdf-a241cf49d8c3.jpg"
+        },
+        {
+          "localPath": "images/kufar-e19e1bd5ef77/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/119d3653-e7d1-4290-9452-dc17f7530ba2.jpg"
+        },
+        {
+          "localPath": "images/kufar-e19e1bd5ef77/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/2c64c05c-78f7-456a-b512-784cdb6814ba.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/47bd20fe-1be6-43c0-abdf-a241cf49d8c3.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/119d3653-e7d1-4290-9452-dc17f7530ba2.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/2c64c05c-78f7-456a-b512-784cdb6814ba.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:01:14.117Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-6a136446dfa6",
+      "sourceId": "6a136446dfa6",
+      "slug": "кроссовки-jordan-13-mid-product-007",
+      "sourceUrl": "https://www.kufar.by/item/1093672866",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093672866",
+      "title": "Кроссовки Jordan 13 mid",
+      "price": {
+        "amount": 139.99,
+        "currency": "BYN",
+        "raw": "139.99 р."
+      },
+      "size": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "colors": [
+        "ЧерныйСезонДемиСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Деми Состояние Нов"
+      ],
+      "description": "Мы предлагаем стильные кроссовки в размерах от 41 до 45. Качество на первом месте! Отправка бел или евро почтой Яндекс доставкой по городу По интересующим вопросам пишите в ЛС",
+      "category": {
+        "id": "shoes",
+        "label": "Обувь",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-6a136446dfa6/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/4d76a926-ab4f-4084-a762-95ffd2a7ab0b.jpg"
+        },
+        {
+          "localPath": "images/kufar-6a136446dfa6/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/dff60974-bb91-4dc2-9a4b-4d9e470e65a7.jpg"
+        },
+        {
+          "localPath": "images/kufar-6a136446dfa6/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/0bb6d7ad-1a18-4771-920c-c007127ad96e.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/4d76a926-ab4f-4084-a762-95ffd2a7ab0b.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/dff60974-bb91-4dc2-9a4b-4d9e470e65a7.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/0bb6d7ad-1a18-4771-920c-c007127ad96e.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:01:17.951Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-a52fb0e1ea19",
+      "sourceId": "a52fb0e1ea19",
+      "slug": "кроссовки-jordan-12-retro-product-008",
+      "sourceUrl": "https://www.kufar.by/item/1093672756",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093672756",
+      "title": "Кроссовки Jordan 12 Retro",
+      "price": {
+        "amount": 129.99,
+        "currency": "BYN",
+        "raw": "129.99 р."
+      },
+      "size": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов"
+      ],
+      "description": "Мы предлагаем стильные кроссовки в размерах от 41 до 45. Качество на первом месте! Отправка бел или евро почтой Яндекс доставкой по городу По интересующим вопросам пишите в ЛС",
+      "category": {
+        "id": "shoes",
+        "label": "Обувь",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-a52fb0e1ea19/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/32de89df-043c-43d2-9bf4-e2b4fecf8ce7.jpg"
+        },
+        {
+          "localPath": "images/kufar-a52fb0e1ea19/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/c68cf9f6-0fb8-42cb-8a38-9aa159e06863.jpg"
+        },
+        {
+          "localPath": "images/kufar-a52fb0e1ea19/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/32b0e308-ef93-4350-b1e1-cd491d4636b7.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/32de89df-043c-43d2-9bf4-e2b4fecf8ce7.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/c68cf9f6-0fb8-42cb-8a38-9aa159e06863.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/32b0e308-ef93-4350-b1e1-cd491d4636b7.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:01:21.709Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-aba30633d122",
+      "sourceId": "aba30633d122",
+      "slug": "зимняя-куртка-chrome-hearts-с-мехом-product-009",
+      "sourceUrl": "https://www.kufar.by/item/1093197132",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093197132",
+      "title": "Зимняя куртка Chrome Hearts с мехом",
+      "price": {
+        "amount": 199.99,
+        "currency": "BYN",
+        "raw": "199.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов"
+      ],
+      "description": "Стильная вещь в вашем гардеробе!Высокое качество и внимание к каждой детали!Внутренняя подкладка (мех)Рассчитана на температуру до −20 °CРазмеры: S-M-L-XL-XXLПо всем вопросам и для заказа пишите в личные сообщения!",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-aba30633d122/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/c7a61eec-f86f-44f3-b103-5877dd864e4e.jpg"
+        },
+        {
+          "localPath": "images/kufar-aba30633d122/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/4df89a7d-b7e4-4847-95b5-ff6c8942fd4e.jpg"
+        },
+        {
+          "localPath": "images/kufar-aba30633d122/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/3997fbb7-1aeb-4444-81b6-578c600e70fb.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/c7a61eec-f86f-44f3-b103-5877dd864e4e.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/4df89a7d-b7e4-4847-95b5-ff6c8942fd4e.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/3997fbb7-1aeb-4444-81b6-578c600e70fb.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:01:25.535Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-65744b7b0e74",
+      "sourceId": "65744b7b0e74",
+      "slug": "зимняя-куртка-boss-product-010",
+      "sourceUrl": "https://www.kufar.by/item/1093196018",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093196018",
+      "title": "Зимняя куртка Boss",
+      "price": {
+        "amount": 215,
+        "currency": "BYN",
+        "raw": "215 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов",
+        "Гомель"
+      ],
+      "description": "Зимняя куртка в стиле BOSSВысокое качество и внимание к каждой детали!Рассчитана на температуру до −25 °CСъёмный капюшонРазмеры: S-M-L-XL-XXLОтправка бел или евро почтой По всем вопросам и для заказа пишите в личные сообщения!",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-65744b7b0e74/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/27ad46af-751e-47ff-b277-2b45307b297a.jpg"
+        },
+        {
+          "localPath": "images/kufar-65744b7b0e74/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/97f36383-c7b7-4b21-9561-984ca35cb682.jpg"
+        },
+        {
+          "localPath": "images/kufar-65744b7b0e74/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/6eb79012-cd55-4e14-8515-59566338e450.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/27ad46af-751e-47ff-b277-2b45307b297a.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/97f36383-c7b7-4b21-9561-984ca35cb682.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/6eb79012-cd55-4e14-8515-59566338e450.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:08.761Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-c1320377b2d5",
+      "sourceId": "c1320377b2d5",
+      "slug": "куртка-мужская-loro-piano-кашемир-product-011",
+      "sourceUrl": "https://www.kufar.by/item/1093195507",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093195507",
+      "title": "Куртка мужская Loro Piano Кашемир",
+      "price": {
+        "amount": 239.99,
+        "currency": "BYN",
+        "raw": "239.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов",
+        "Гомель"
+      ],
+      "description": "Куртка зимняя Loro PianoМатериал кашемирНаполнитель холлофайберДо -25 градусовПремиальное качествоРазмеры S-M-L-XL-XXLОтправка бел или евро почтой По вопросам пишите в личные сообщения",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-c1320377b2d5/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/2f9da45e-18f1-445f-ae9c-e416866f524f.jpg"
+        },
+        {
+          "localPath": "images/kufar-c1320377b2d5/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/06a3914a-97f6-4c0d-86f9-bfc60b1cd345.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/2f9da45e-18f1-445f-ae9c-e416866f524f.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/06a3914a-97f6-4c0d-86f9-bfc60b1cd345.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:12.946Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-83276dd3bfa7",
+      "sourceId": "83276dd3bfa7",
+      "slug": "куртка-зимняя-loro-piano-кашемир-product-012",
+      "sourceUrl": "https://www.kufar.by/item/1093194774",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093194774",
+      "title": "Куртка зимняя Loro Piano Кашемир",
+      "price": {
+        "amount": 239.99,
+        "currency": "BYN",
+        "raw": "239.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "СерыйСезонЗимаСостояниеНовоеТов",
+        "Серый",
+        "Серый Сезон Зима Состояние Ново",
+        "Гомель"
+      ],
+      "description": "Куртка зимняя Loro PianoМатериал кашемирНаполнитель холлофайберДо -25 градусовПремиальное качествоРазмеры S-M-L-XL-XXLОтправка бел или евро почтой По вопросам пишите в личные сообщения",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-83276dd3bfa7/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/bbdd2b3a-50f1-4e62-8322-00bb59e71533.jpg"
+        },
+        {
+          "localPath": "images/kufar-83276dd3bfa7/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/dca471dd-e47f-4809-bf29-c41f8cf0bcb5.jpg"
+        },
+        {
+          "localPath": "images/kufar-83276dd3bfa7/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/1dd3c2b8-72f9-447f-86b9-fd2de990a145.jpg"
+        },
+        {
+          "localPath": "images/kufar-83276dd3bfa7/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/fc0e2b3e-0074-487e-adf3-c25785e0c4e2.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/bbdd2b3a-50f1-4e62-8322-00bb59e71533.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/dca471dd-e47f-4809-bf29-c41f8cf0bcb5.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/1dd3c2b8-72f9-447f-86b9-fd2de990a145.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/fc0e2b3e-0074-487e-adf3-c25785e0c4e2.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:18.472Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-68c189a8148b",
+      "sourceId": "68c189a8148b",
+      "slug": "пуховик-burberry-2x-сторонний-product-013",
+      "sourceUrl": "https://www.kufar.by/item/1093193833",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093193833",
+      "title": "Пуховик Burberry 2x сторонний",
+      "price": {
+        "amount": 200,
+        "currency": "BYN",
+        "raw": "200 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов"
+      ],
+      "description": "ВСЕ КУРТКИ НОВЫ Теплая куртка Burberry РАЗМЕРЫ РАЗНЫЕ, НЕ ЕДИНЫЙ ФОТО ВЖИВУЮКачество LUX - логотип вышивка и все биркиРазмеры: S-M-L-XL-XXLОтправка бел или евро почтой По вопросам пишите в личные сообщения",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-68c189a8148b/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/e31b3284-c5f1-4247-b0bd-56d581895a6a.jpg"
+        },
+        {
+          "localPath": "images/kufar-68c189a8148b/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/ae0c222e-c41b-4b27-998f-6c4088757a13.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/e31b3284-c5f1-4247-b0bd-56d581895a6a.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/ae0c222e-c41b-4b27-998f-6c4088757a13.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:26.686Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-dc67f37ad3da",
+      "sourceId": "dc67f37ad3da",
+      "slug": "длинная-зимняя-куртка-hermes-product-014",
+      "sourceUrl": "https://www.kufar.by/item/1093193203",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093193203",
+      "title": "Длинная зимняя куртка Hermes",
+      "price": {
+        "amount": 234.99,
+        "currency": "BYN",
+        "raw": "234.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)",
+        "54-56 (XXXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов",
+        "Гомель"
+      ],
+      "description": "ВСЕ КУРТКИ НОВЫ Теплая куртка HERMES удлиненная РАЗМЕРЫ РАЗНЫЕ, НЕ ЕДИНЫЙ ФОТО ВЖИВУЮКачество LUX - логотип вышивка и все биркиРазмеры: S-M-L-XL-XXLОтправка бел или евро почтой По вопросам пишите в личные сообщения",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-dc67f37ad3da/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/fd3c10f1-7463-460f-97e6-aa55e1f40f21.jpg"
+        },
+        {
+          "localPath": "images/kufar-dc67f37ad3da/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/8c198971-28a3-4a24-85b2-c83efd44d041.jpg"
+        },
+        {
+          "localPath": "images/kufar-dc67f37ad3da/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/5e7e7e6e-7506-4b23-8c13-31182d317e63.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/fd3c10f1-7463-460f-97e6-aa55e1f40f21.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/8c198971-28a3-4a24-85b2-c83efd44d041.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/5e7e7e6e-7506-4b23-8c13-31182d317e63.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:34.127Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-36ae68c79b1e",
+      "sourceId": "36ae68c79b1e",
+      "slug": "акция-пуховик-hugo-boss-глянец-product-015",
+      "sourceUrl": "https://www.kufar.by/item/1093191773",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093191773",
+      "title": "АКЦИЯ Пуховик HUGO BOSS глянец",
+      "price": {
+        "amount": 139.99,
+        "currency": "BYN",
+        "raw": "139.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов"
+      ],
+      "description": "Распродажа Пуховик HUGO BOSS Люкс качествоРазмеры S-M-L-XL-XXL",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-36ae68c79b1e/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/1b62ecad-297a-41f5-9dd1-4f6c046e688d.jpg"
+        },
+        {
+          "localPath": "images/kufar-36ae68c79b1e/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/b8f62ba1-e040-465f-a92e-f142b94958d5.jpg"
+        },
+        {
+          "localPath": "images/kufar-36ae68c79b1e/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/a05778e9-6c95-4b2e-b373-43dec9c5bd76.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/1b62ecad-297a-41f5-9dd1-4f6c046e688d.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/b8f62ba1-e040-465f-a92e-f142b94958d5.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/a05778e9-6c95-4b2e-b373-43dec9c5bd76.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:40.950Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-1325581520ce",
+      "sourceId": "1325581520ce",
+      "slug": "куртка-бомбер-adidas-originals-product-016",
+      "sourceUrl": "https://www.kufar.by/item/1093190270",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093190270",
+      "title": "Куртка-бомбер Adidas Originals",
+      "price": {
+        "amount": 200,
+        "currency": "BYN",
+        "raw": "200 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов",
+        "ке с вышивкой на спине"
+      ],
+      "description": "Зимняя куртка бомбер пуховик Adidas Originals в чёрной расцветке с вышивкой на спине. Размеры:— 46 (S)— 48 (M)— 50 (L)— 52 (XL)— 54 (2XL) Добавь вторую позицию и получи скидку 5% на заказ (если хотите заказать от 5 вещей и больше - согласуем дополнительную скидку) Отправка бел или евро почтой по Беларуси Для заказа пишите в личные сообщения",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-1325581520ce/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/723c95fd-ef0c-49ec-903a-868ce801fefd.jpg"
+        },
+        {
+          "localPath": "images/kufar-1325581520ce/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/1caf6e59-db95-421c-a97b-2cba949edf55.jpg"
+        },
+        {
+          "localPath": "images/kufar-1325581520ce/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/098b52a5-d7c0-440c-b7cb-a835c537c283.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/723c95fd-ef0c-49ec-903a-868ce801fefd.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/1caf6e59-db95-421c-a97b-2cba949edf55.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/098b52a5-d7c0-440c-b7cb-a835c537c283.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:45.344Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-0e568f823a58",
+      "sourceId": "0e568f823a58",
+      "slug": "зимняя-куртка-alpha-industries-product-017",
+      "sourceUrl": "https://www.kufar.by/item/1093190026",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093190026",
+      "title": "Зимняя куртка Alpha Industries",
+      "price": {
+        "amount": 200,
+        "currency": "BYN",
+        "raw": "200 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов"
+      ],
+      "description": "Куртка Alpha Industries зимняя Новая, с бирками! Сидит очень клево и отлично согревает в морозы Размеры в наличии— S, M, L, XL, XXL Количество ограничено, разбирают быстро!Отправка бел или евро почтой в течении 24 часов",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-0e568f823a58/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/656bae5e-9230-4ab6-859d-1ff5e41f868e.jpg"
+        },
+        {
+          "localPath": "images/kufar-0e568f823a58/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/0cb329b4-c135-4eb7-97d7-957679b00d51.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/656bae5e-9230-4ab6-859d-1ff5e41f868e.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/0cb329b4-c135-4eb7-97d7-957679b00d51.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:49.092Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-95d76b41be43",
+      "sourceId": "95d76b41be43",
+      "slug": "зимняя-куртка-бомбер-armani-exchange-ea7-product-018",
+      "sourceUrl": "https://www.kufar.by/item/1093189239",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093189239",
+      "title": "Зимняя куртка-бомбер Armani Exchange EA7",
+      "price": {
+        "amount": 200,
+        "currency": "BYN",
+        "raw": "200 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов"
+      ],
+      "description": "Мужская куртка-бомбер Armani Exchange для зимнего сезона. Модель выполнена из плотной матовой ткани. Эластичные трикотажные манжеты и нижний край обеспечивают комфортную посадку и защиту от ветра. • Дизайн в стиле бомбера с акцентным логотипом A|X на груди. • Практичные боковые карманы на молниях для надежного хранения мелочей. • Прочная металлическая фурнитура. • Укороченный крой, который не сковывает движений.Отправка Бел или Евро почтой Для заказа пишите в личные сообщения",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-95d76b41be43/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/afa5fbda-ab99-4d71-9585-0cfbc16cc051.jpg"
+        },
+        {
+          "localPath": "images/kufar-95d76b41be43/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/9e02962a-1d75-4516-a3a0-9bf472f29e62.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/afa5fbda-ab99-4d71-9585-0cfbc16cc051.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/9e02962a-1d75-4516-a3a0-9bf472f29e62.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:54.740Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-15ba9c694a25",
+      "sourceId": "15ba9c694a25",
+      "slug": "ботинки-timberland-x-supreme-6-inch-premium-product-019",
+      "sourceUrl": "https://www.kufar.by/item/1092642194",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1092642194",
+      "title": "Ботинки Timberland x Supreme 6 inch Premium",
+      "price": {
+        "amount": 265,
+        "currency": "BYN",
+        "raw": "265 р."
+      },
+      "size": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45",
+        "46"
+      ],
+      "colors": [],
+      "description": "Ботинки Timberland x Supreme 6 Inch Premium Boots без меха В наличииРазмеры: 41 -46Все фото живые фотоОтправка бел или евро почтой или Яндекс доставкой по городу Перед заказом обязательно уточнить наличие нужного размера!",
+      "category": {
+        "id": "shoes",
+        "label": "Обувь",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-15ba9c694a25/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/5e423d38-2208-4562-8aaf-f3b273ac9c5f.jpg"
+        },
+        {
+          "localPath": "images/kufar-15ba9c694a25/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/fa53f4d2-bc6b-4ba9-ba3e-f79684304667.jpg"
+        },
+        {
+          "localPath": "images/kufar-15ba9c694a25/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/033946e6-2b7f-4444-abfe-4b43c1e507ed.jpg"
+        },
+        {
+          "localPath": "images/kufar-15ba9c694a25/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/1d30eed4-2a3b-4c52-8dd5-cdfd75814566.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/5e423d38-2208-4562-8aaf-f3b273ac9c5f.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/fa53f4d2-bc6b-4ba9-ba3e-f79684304667.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/033946e6-2b7f-4444-abfe-4b43c1e507ed.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/1d30eed4-2a3b-4c52-8dd5-cdfd75814566.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:07:59.796Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-ab3e5f5bf2c8",
+      "sourceId": "ab3e5f5bf2c8",
+      "slug": "полу-замок-polo-ralph-lauren-product-020",
+      "sourceUrl": "https://www.kufar.by/item/1083487899",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1083487899",
+      "title": "Полу замок Polo Ralph Lauren",
+      "price": {
+        "amount": 100,
+        "currency": "BYN",
+        "raw": "100 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "а Гомель"
+      ],
+      "description": "Лучший вариант . Топовая модель, которую хочется всем! Успей забрать!Paзмеры: S, M, L, XL, XXLLUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "other",
+        "label": "Другое",
+        "source": "fallback"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-ab3e5f5bf2c8/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/564235ef-2f05-46dc-8689-0b530ece844c.jpg"
+        },
+        {
+          "localPath": "images/kufar-ab3e5f5bf2c8/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/fe577069-6b18-4bb7-8cef-2503bbc8cf37.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/564235ef-2f05-46dc-8689-0b530ece844c.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/fe577069-6b18-4bb7-8cef-2503bbc8cf37.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:03.340Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-686942aaffa4",
+      "sourceId": "686942aaffa4",
+      "slug": "nike-air-force-1-white-кроссовки-product-021",
+      "sourceUrl": "https://www.kufar.by/item/1000420023",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1000420023",
+      "title": "Nike Air Force 1 White кроссовки",
+      "price": {
+        "amount": 100,
+        "currency": "BYN",
+        "raw": "100 р."
+      },
+      "size": [
+        "38",
+        "39",
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "colors": [],
+      "description": "• Качество : LUХ • Сезон Деми • Размеры все в наличии • (41,42,43,44,45)Доставка по всей Беларуси!Есть самовывоз в Гомеле с примеркой",
+      "category": {
+        "id": "shoes",
+        "label": "Обувь",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-686942aaffa4/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/4454ca95-0f41-4942-b7f5-5d3ee2a0603d.jpg"
+        },
+        {
+          "localPath": "images/kufar-686942aaffa4/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/f206cf40-3a8b-4109-acbc-7b3e970b2237.jpg"
+        },
+        {
+          "localPath": "images/kufar-686942aaffa4/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/15594357-e0e1-4888-8a23-15978804f5c1.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/4454ca95-0f41-4942-b7f5-5d3ee2a0603d.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/f206cf40-3a8b-4109-acbc-7b3e970b2237.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/15594357-e0e1-4888-8a23-15978804f5c1.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:07.801Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-9cc943d1f3e7",
+      "sourceId": "9cc943d1f3e7",
+      "slug": "кроссовки-nike-air-force-ambush-product-022",
+      "sourceUrl": "https://www.kufar.by/item/1078887421",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1078887421",
+      "title": "Кроссовки Nike air force ambush",
+      "price": {
+        "amount": 120,
+        "currency": "BYN",
+        "raw": "120 р."
+      },
+      "size": [
+        "40",
+        "41",
+        "42",
+        "43",
+        "44",
+        "45"
+      ],
+      "colors": [],
+      "description": "Мы предлагаем стильные кроссовки в размерах от 41 до 45. Качество на первом месте! Мы гарантируем, что все наши кроссовки прошли строгий контроль качества на каждом этапе производства. Отправка бел или евро почтой Яндекс доставкой по городу По интересующим вопросам пишите в ЛС",
+      "category": {
+        "id": "shoes",
+        "label": "Обувь",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-9cc943d1f3e7/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/9ac32f95-011b-4b4c-9611-072e1833dfd1.jpg"
+        },
+        {
+          "localPath": "images/kufar-9cc943d1f3e7/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/f10245e2-a13b-459d-b1ca-7523871e808a.jpg"
+        },
+        {
+          "localPath": "images/kufar-9cc943d1f3e7/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/e591961f-ca9b-4791-a6e9-d6e867f57981.jpg"
+        },
+        {
+          "localPath": "images/kufar-9cc943d1f3e7/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/65155ac2-0472-482d-aff6-ef0918cfb788.jpg"
+        },
+        {
+          "localPath": "images/kufar-9cc943d1f3e7/05.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/069ed600-a994-45b8-ad80-ec404193773c.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/9ac32f95-011b-4b4c-9611-072e1833dfd1.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/f10245e2-a13b-459d-b1ca-7523871e808a.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/e591961f-ca9b-4791-a6e9-d6e867f57981.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/65155ac2-0472-482d-aff6-ef0918cfb788.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/069ed600-a994-45b8-ad80-ec404193773c.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:13.799Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-9db8b85da0f3",
+      "sourceId": "9db8b85da0f3",
+      "slug": "костюм-nike-tech-fleece-product-023",
+      "sourceUrl": "https://www.kufar.by/item/1083487435",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1083487435",
+      "title": "Костюм Nike Tech Fleece",
+      "price": {
+        "amount": 150,
+        "currency": "BYN",
+        "raw": "150 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [],
+      "description": "Лучший вариант . Топовая модель, которую хочется всем! Успей забрать!Paзмеры: S, M, L, XL, XXLLUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "other",
+        "label": "Другое",
+        "source": "fallback"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-9db8b85da0f3/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/590b0c27-6115-4976-9b4c-3ab855ea0e31.jpg"
+        },
+        {
+          "localPath": "images/kufar-9db8b85da0f3/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/bc6e4d99-773c-4ae4-9566-022db5813a29.jpg"
+        },
+        {
+          "localPath": "images/kufar-9db8b85da0f3/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/2689e632-9a5e-4197-a660-83f436a70636.jpg"
+        },
+        {
+          "localPath": "images/kufar-9db8b85da0f3/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/a00c48e5-b260-43e6-90b9-ce7e9d892293.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/590b0c27-6115-4976-9b4c-3ab855ea0e31.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/bc6e4d99-773c-4ae4-9566-022db5813a29.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/2689e632-9a5e-4197-a660-83f436a70636.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/a00c48e5-b260-43e6-90b9-ce7e9d892293.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:19.428Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-6d6845dd6fb8",
+      "sourceId": "6d6845dd6fb8",
+      "slug": "пуховик-bape-big-logo-product-024",
+      "sourceUrl": "https://www.kufar.by/item/1083487827",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1083487827",
+      "title": "Пуховик Bape big logo",
+      "price": {
+        "amount": 230,
+        "currency": "BYN",
+        "raw": "230 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонЗимаСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Зима Состояние Нов",
+        "Гомель"
+      ],
+      "description": "Bape Big LogoЛучший вариант . Топовая модель, которую хочется всем! Успей забрать!Paзмеры: S, M, L, XL, XXLПлотнaя набивка на зимy LUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-6d6845dd6fb8/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/e335743d-ce0a-4a4e-9884-632a60bd90fb.jpg"
+        },
+        {
+          "localPath": "images/kufar-6d6845dd6fb8/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/f8b6c5c2-5e67-4203-8294-02cfb6a1a766.jpg"
+        },
+        {
+          "localPath": "images/kufar-6d6845dd6fb8/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/a617399d-bad6-4d95-aee4-8c1f5cec9b44.jpg"
+        },
+        {
+          "localPath": "images/kufar-6d6845dd6fb8/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/3dc91c71-68ff-4f62-8ca0-0538a1a3dc51.jpg"
+        },
+        {
+          "localPath": "images/kufar-6d6845dd6fb8/05.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/d61348c5-99c5-4757-b906-ea53352af599.jpg"
+        },
+        {
+          "localPath": "images/kufar-6d6845dd6fb8/06.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/12f062ef-2255-47fc-96c5-8afea2240b07.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/e335743d-ce0a-4a4e-9884-632a60bd90fb.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/f8b6c5c2-5e67-4203-8294-02cfb6a1a766.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/a617399d-bad6-4d95-aee4-8c1f5cec9b44.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/3dc91c71-68ff-4f62-8ca0-0538a1a3dc51.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/d61348c5-99c5-4757-b906-ea53352af599.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/12f062ef-2255-47fc-96c5-8afea2240b07.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:24.603Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-9985c2a2195d",
+      "sourceId": "9985c2a2195d",
+      "slug": "кофта-dior-зип-худи-product-025",
+      "sourceUrl": "https://www.kufar.by/item/1083487831",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1083487831",
+      "title": "Кофта Dior зип-худи",
+      "price": {
+        "amount": 110,
+        "currency": "BYN",
+        "raw": "110 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонДемиСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Деми Состояние Нов"
+      ],
+      "description": "Лучший вариант . Топовая модель, которую хочется всем! Успей забрать!Paзмеры: S, M, L, XL, XXLLUX-качество.ВСЯ ПРОШИВКА ЧЁТКАЯ.БИРКИ.Доставка по всей РБ",
+      "category": {
+        "id": "hoodies",
+        "label": "Худи и толстовки",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-9985c2a2195d/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/378efd77-481d-434e-9ebb-5f81918d8912.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/378efd77-481d-434e-9ebb-5f81918d8912.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:27.743Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-10286aafc74f",
+      "sourceId": "10286aafc74f",
+      "slug": "кардиган-loro-piano-кофта-product-026",
+      "sourceUrl": "https://www.kufar.by/item/1093199790",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093199790",
+      "title": "Кардиган Loro Piano (кофта)",
+      "price": {
+        "amount": 110,
+        "currency": "BYN",
+        "raw": "110 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)",
+        "54-56 (XXXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонДемиСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Деми Состояние Нов",
+        "а Гомель"
+      ],
+      "description": "Кардиган Loro Piano Размеры S-M-L-XL-XXXLОтличный вариант на зимний сезон Люкс качество , все логотипы вышивка Отправка бел или евро почтой Во вопросам пишите в личные сообщения",
+      "category": {
+        "id": "sweatshirts",
+        "label": "Свитшоты и кофты",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-10286aafc74f/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/3d848a56-fc64-41bf-aac2-a9598a04e421.jpg"
+        },
+        {
+          "localPath": "images/kufar-10286aafc74f/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/cb6d8d12-8998-4e28-b302-0c2200373cfd.jpg"
+        },
+        {
+          "localPath": "images/kufar-10286aafc74f/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/0bbaf346-75ae-49af-bfc0-ba1cca87b8f0.jpg"
+        },
+        {
+          "localPath": "images/kufar-10286aafc74f/04.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/30d5162f-591b-4d74-bec9-35e6d320923e.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/3d848a56-fc64-41bf-aac2-a9598a04e421.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/cb6d8d12-8998-4e28-b302-0c2200373cfd.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/0bbaf346-75ae-49af-bfc0-ba1cca87b8f0.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/30d5162f-591b-4d74-bec9-35e6d320923e.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:54.548Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-bcc38a2de6a2",
+      "sourceId": "bcc38a2de6a2",
+      "slug": "свитер-polo-ralph-lauren-водолазка-2-цвета-product-027",
+      "sourceUrl": "https://www.kufar.by/item/1093198748",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093198748",
+      "title": "Свитер Polo Ralph Lauren (водолазка) 2 цвета",
+      "price": {
+        "amount": 70,
+        "currency": "BYN",
+        "raw": "70 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "Бежевый",
+        "а Гомельская обл"
+      ],
+      "description": "Свитер (водолазка) высокое горло Polo Ralph Lauren Размеры S-M-L-XL-XXLОтличная цена !Отправка бел или евро почтой По вопросам пишите в личные сообщения",
+      "category": {
+        "id": "sweatshirts",
+        "label": "Свитшоты и кофты",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-bcc38a2de6a2/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/fea61693-fcc6-4dc6-9284-25a53c91e08a.jpg"
+        },
+        {
+          "localPath": "images/kufar-bcc38a2de6a2/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/4d4c5698-d7de-41b6-a5fe-7d90569e82ff.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/fea61693-fcc6-4dc6-9284-25a53c91e08a.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/4d4c5698-d7de-41b6-a5fe-7d90569e82ff.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:08:58.471Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-e5d614357a5f",
+      "sourceId": "e5d614357a5f",
+      "slug": "костюм-polo-ralph-lauren-на-флисе-product-028",
+      "sourceUrl": "https://www.kufar.by/item/1093198272",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093198272",
+      "title": "Костюм Polo Ralph Lauren на флисе",
+      "price": {
+        "amount": 199.99,
+        "currency": "BYN",
+        "raw": "199.99 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "Белый"
+      ],
+      "description": "Зимний костюм Polo Ralph Lauren на флисе Размеры S-M-L-XL-XXLЛучшие вещи в твоем гардеробе Люкс качество ( все логотипы вышиты)Отправка бел или евро почтой По вопросам пишите в личные сообщения",
+      "category": {
+        "id": "other",
+        "label": "Другое",
+        "source": "fallback"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-e5d614357a5f/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/d936f8f0-23e6-42f9-8be8-b5972ee928f1.jpg"
+        },
+        {
+          "localPath": "images/kufar-e5d614357a5f/02.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/05e900d1-3877-4e04-866e-5c0a409c9ece.jpg"
+        },
+        {
+          "localPath": "images/kufar-e5d614357a5f/03.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/64935e77-6908-4b91-bc6a-532e40f716c3.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/d936f8f0-23e6-42f9-8be8-b5972ee928f1.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/05e900d1-3877-4e04-866e-5c0a409c9ece.jpg",
+        "https://rms.kufar.by/v1/gallery/adim1/64935e77-6908-4b91-bc6a-532e40f716c3.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:09:02.607Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    },
+    {
+      "id": "kufar-58f214aaab57",
+      "sourceId": "58f214aaab57",
+      "slug": "куртка-бомбер-hermes-product-029",
+      "sourceUrl": "https://www.kufar.by/item/1093193591",
+      "pageUrlAtCollection": "https://www.kufar.by/item/1093193591",
+      "title": "Куртка-бомбер Hermes",
+      "price": {
+        "amount": 200,
+        "currency": "BYN",
+        "raw": "200 р."
+      },
+      "size": [
+        "46 (S)",
+        "48 (M)",
+        "50 (L)",
+        "52 (XL)",
+        "52-54 (XXL)"
+      ],
+      "colors": [
+        "ЧерныйСезонДемиСостояниеНовоеТо",
+        "Черный",
+        "Черный Сезон Деми Состояние Нов"
+      ],
+      "description": "ВСЕ КУРТКИ НОВЫ Теплая куртка HERMES РАЗМЕРЫ РАЗНЫЕ, НЕ ЕДИНЫЙ ФОТО ВЖИВУЮКачество LUX - логотип вышивка и все биркиРазмеры: S-M-L-XL-XXLОтправка бел или евро почтой По вопросам пишите в личные сообщения",
+      "category": {
+        "id": "jackets",
+        "label": "Куртки и пуховики",
+        "source": "inferred-from-listing-text"
+      },
+      "sourceCategory": null,
+      "breadcrumbs": [],
+      "images": [
+        {
+          "localPath": "images/kufar-58f214aaab57/01.jpg",
+          "sourceUrl": "https://rms.kufar.by/v1/gallery/adim1/45d9bae3-94e4-4977-9f96-63b3c886352c.jpg"
+        }
+      ],
+      "imageDownloadFailures": [],
+      "sourceImageUrls": [
+        "https://rms.kufar.by/v1/gallery/adim1/45d9bae3-94e4-4977-9f96-63b3c886352c.jpg"
+      ],
+      "collectedAt": "2026-11-13T08:09:06.102Z",
+      "collectionMode": "automatic",
+      "extractedFrom": {
+        "jsonLdProduct": false,
+        "canonical": true
+      },
+      "stock": null
+    }
+  ]
+}
