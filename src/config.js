@@ -1,11 +1,3 @@
 export const STORE_NAME = 'CROOS_OPT';
 export const STORAGE_PREFIX = 'croos-opt-demo-v2';
 export const LEGACY_STORAGE_PREFIXES = ['croos-opt-demo-v1'];
-export const EUROPOST_BRANCHES = {
-  'Минск': ['Тестовое отделение №1', 'Тестовое отделение №2'],
-  'Гомель': ['Тестовое отделение №3'],
-  'Брест': ['Тестовое отделение №4'],
-  'Гродно': ['Тестовое отделение №5'],
-  'Витебск': ['Тестовое отделение №6'],
-  'Могилёв': ['Тестовое отделение №7'],
-};
