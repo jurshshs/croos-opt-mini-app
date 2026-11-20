@@ -5,6 +5,8 @@ import { STORE_NAME } from './config';
 import { seedProducts, categories, categoryName, money, read, write, demoOrders } from './data';
 import './style.css';
 import './motion.css';
+import { formatChannelPost } from './channel-post';
+import { publishProduct } from './publish-product';
 import './admin.css';
 import './refinement.css';
 
@@ -35,6 +37,7 @@ function App() {
   const [photo, setPhoto] = useState(0);
   const [size, setSize] = useState('');
   const [editor, setEditor] = useState(null);
+  const savingProduct = useRef(false);
   const [completed, setCompleted] = useState(null);
   const [error, setError] = useState('');
   const [checkout, setCheckout] = useState({ fullName: '', phone: '', city: '', branch: '', height: '', weight: '', shoeSizes: {} });
@@ -107,6 +110,40 @@ function App() {
     };
     setOrders(old => [order, ...old]); setCart([]); setCompleted(order); go('success'); tg?.HapticFeedback?.notificationOccurred('success');
   }
+  async function saveProduct(event) {
+    event.preventDefault();
+    if (savingProduct.current) return;
+    if (!editor.title.trim()) return setError('Добавьте название');
+    const isNew = !editor.id;
+    const id = editor.id || 'local-' + crypto.randomUUID();
+    const product = {
+      ...editor, id, slug: editor.slug || id, title: editor.title.trim(),
+      price: editor.price === '' ? null : Number(editor.price),
+      stock: editor.stock === '' ? null : Number(editor.stock),
+      sizes: editor.sizes.split(',').map(value => value.trim()).filter(Boolean),
+    };
+    if (product.price !== null && (!Number.isFinite(product.price) || product.price < 0)) return setError('Проверьте цену');
+    if (isNew) product.channelPost = 'pending';
+    const updated = isNew ? [product, ...products] : products.map(p => p.id === id ? product : p);
+    try {
+      write('products', updated);
+    } catch {
+      return setError('Не удалось сохранить товар. Уменьшите размер фотографий и попробуйте снова.');
+    }
+    savingProduct.current = true;
+    setProducts(updated);
+    go('admin');
+    if (isNew) {
+      try {
+        const status = await publishProduct({ ...product, category: categoryName(product.category) }, tg?.initData);
+        setProducts(old => old.map(p => p.id === id ? { ...p, channelPost: status } : p));
+      } finally {
+        savingProduct.current = false;
+      }
+    } else {
+      savingProduct.current = false;
+    }
+  }
   const current = products.find(p => p.id === selected);
   const nav = [{ id:'home', label:'Главная', icon:House }, { id:'catalog', label:'Каталог', icon:LayoutGrid }, { id:'cart', label:'Корзина', icon:ShoppingBag }, { id:'profile', label:'Профиль', icon:UserRound }];
   return <div className="app-shell">
@@ -155,7 +192,7 @@ function App() {
       {page === 'favorites' && <section className="section"><div className="page-head"><small>СОХРАНЕНО</small><h1>Избранное<span className="accent-dot">.</span></h1></div><ProductGrid products={products.filter(p => favorites.includes(p.id))} openProduct={openProduct} favorites={favorites} toggleFavorite={toggleFavorite} quickAdd={quickAdd}/>{favorites.length === 0 && <Empty text="Здесь пока пусто" action={() => showCategory('all')}/>}</section>}
       {page === 'orders' && <section className="section"><div className="page-head"><small>ИСТОРИЯ</small><h1>Мои заказы<span className="accent-dot">.</span></h1></div>{[...orders,...demoOrders].map(o => <OrderCard key={o.id} order={o}/>)}</section>}
       {page === 'admin' && role === 'seller' && <section className="section admin-page"><div className="page-head"><small>ЛОКАЛЬНЫЙ ДЕМО-РЕЖИМ</small><h1>Панель продавца<span className="accent-dot">.</span></h1><p>Изменения видны только на этом устройстве.</p></div><div className="admin-stats"><div><span>Товары</span><strong>{products.length}</strong></div><div><span>Заказы</span><strong>{orders.length}</strong></div></div><div className="section-title"><h2>Товары</h2><button className="small-yellow" onClick={() => { setEditor({ id:'', title:'', description:'', category:categories[0]?.id || 'other', price:'', sizes:'', stock:'', images:[] }); go('editor'); }}><Plus size={17}/> Добавить</button></div><AdminProducts products={products} category={adminCategory} setCategory={setAdminCategory} query={adminQuery} setQuery={setAdminQuery} onEdit={p => { setEditor({ ...p, price:p.price ?? '', stock:p.stock ?? '', sizes:p.sizes.join(', ') }); go('editor'); }}/><div className="section-title"><h2>Заказы</h2></div>{orders.length ? orders.map(o => <div className="admin-order" key={o.id}><div><strong>{o.id}</strong><span>{o.customer.fullName} · {money(o.total)}</span><span>{o.customer.phone}</span><span>{o.customer.city}, {o.customer.branch}</span>{o.customer.height && <span>Рост {o.customer.height} см · Вес {o.customer.weight} кг</span>}<span>{o.items.map(item => `${item.title} · ${item.size} × ${item.quantity}`).join(' / ')}</span></div><select value={o.status} onChange={e => setOrders(old => old.map(x => x.id === o.id ? { ...x, status:e.target.value } : x))}>{['Новый','В обработке','Отправлен','Доставлен','Отменён'].map(s => <option key={s}>{s}</option>)}</select></div>) : <p className="muted">Новых заказов на этом устройстве нет.</p>}</section>}
-      {page === 'editor' && role === 'seller' && editor && <section className="section form-page"><div className="page-head"><small>КАТАЛОГ</small><h1>{editor.id ? 'Редактировать' : 'Новый товар'}<span className="accent-dot">.</span></h1></div><form onSubmit={e => { e.preventDefault(); if (!editor.title.trim()) return setError('Добавьте название'); const p = { ...editor, id:editor.id || 'local-' + Date.now(), slug:editor.slug || 'local-' + Date.now(), price:editor.price === '' ? null : Number(editor.price), stock:editor.stock === '' ? null : Number(editor.stock), sizes:editor.sizes.split(',').map(s => s.trim()).filter(Boolean) }; setProducts(old => old.some(x => x.id === p.id) ? old.map(x => x.id === p.id ? p : x) : [p,...old]); setError(''); go('admin'); }}><Field label="Название" value={editor.title} onChange={v => setEditor({ ...editor,title:v })} required/><label className="field">Категория<select value={editor.category} onChange={e => setEditor({ ...editor,category:e.target.value })}>{categories.map(c => <option value={c.id} key={c.id}>{c.label}</option>)}</select></label><Field label="Цена, BYN" value={editor.price} onChange={v => setEditor({ ...editor,price:v })} type="number" placeholder="Не указана"/><Field label="Размеры через запятую" value={editor.sizes} onChange={v => setEditor({ ...editor,sizes:v })} placeholder="S, M, L"/><Field label="Остаток" value={editor.stock} onChange={v => setEditor({ ...editor,stock:v })} type="number" placeholder="Не указан"/><label className="field">Описание<textarea value={editor.description} onChange={e => setEditor({ ...editor,description:e.target.value })}/></label><label className="upload"><ImagePlus/><span>Добавить фотографии</span><input type="file" accept="image/*" multiple onChange={async e => { const files = [...e.target.files]; const images = await Promise.all(files.map(f => new Promise(resolve => { const reader = new FileReader(); reader.onload = () => resolve(reader.result); reader.readAsDataURL(f); }))); setEditor(old => ({ ...old, images:[...old.images,...images] })); }}/></label><p className="field-help">Фотографии сохраняются локально в браузере. Большие файлы могут превысить объём хранилища.</p><div className="editor-images">{editor.images.map((src,i) => <div key={i}><img src={src} alt=""/><button type="button" onClick={() => setEditor({ ...editor,images:editor.images.filter((_,j) => j !== i) })}><X size={15}/></button></div>)}</div>{error && <p className="form-error">{error}</p>}<button className="yellow-button full" type="submit">Сохранить товар <Check size={20}/></button>{editor.id && <button className="delete-button" type="button" onClick={() => { if (confirm('Удалить товар?')) { setProducts(old => old.filter(p => p.id !== editor.id)); go('admin'); } }}><Trash2 size={17}/> Удалить товар</button>}</form></section>}
+      {page === 'editor' && role === 'seller' && editor && <section className="section form-page"><div className="page-head"><small>КАТАЛОГ</small><h1>{editor.id ? 'Редактировать' : 'Новый товар'}<span className="accent-dot">.</span></h1></div><form onSubmit={saveProduct}><Field label="Название" value={editor.title} onChange={v => setEditor({ ...editor,title:v })} required/><label className="field">Категория<select value={editor.category} onChange={e => setEditor({ ...editor,category:e.target.value })}>{categories.map(c => <option value={c.id} key={c.id}>{c.label}</option>)}</select></label><Field label="Цена, BYN" value={editor.price} onChange={v => setEditor({ ...editor,price:v })} type="number" placeholder="Не указана"/><Field label="Размеры через запятую" value={editor.sizes} onChange={v => setEditor({ ...editor,sizes:v })} placeholder="S, M, L"/><Field label="Остаток" value={editor.stock} onChange={v => setEditor({ ...editor,stock:v })} type="number" placeholder="Не указан"/><label className="field">Описание<textarea value={editor.description} onChange={e => setEditor({ ...editor,description:e.target.value })}/></label><label className="upload"><ImagePlus/><span>Добавить фотографии</span><input type="file" accept="image/*" multiple onChange={async e => { const files = [...e.target.files]; const images = await Promise.all(files.map(f => new Promise(resolve => { const reader = new FileReader(); reader.onload = () => resolve(reader.result); reader.readAsDataURL(f); }))); setEditor(old => ({ ...old, images:[...old.images,...images] })); }}/></label><p className="field-help">Фотографии сохраняются локально в браузере. Большие файлы могут превысить объём хранилища.</p><div className="editor-images">{editor.images.map((src,i) => <div key={i}><img src={src} alt=""/><button type="button" onClick={() => setEditor({ ...editor,images:editor.images.filter((_,j) => j !== i) })}><X size={15}/></button></div>)}</div>{!editor.id && <ChannelPreview product={editor}/>}{error && <p className="form-error">{error}</p>}<button className="yellow-button full" type="submit">Сохранить товар <Check size={20}/></button>{editor.id && <button className="delete-button" type="button" onClick={() => { if (confirm('Удалить товар?')) { setProducts(old => old.filter(p => p.id !== editor.id)); go('admin'); } }}><Trash2 size={17}/> Удалить товар</button>}</form></section>}
     </main>
     {page === 'product' && current && <div className="purchase-bar">
       <button className="yellow-button full" disabled={current.price == null || current.stock === 0} onClick={() => addCart(current)}>
@@ -185,6 +222,26 @@ function ProductGrid({ products, openProduct, favorites, toggleFavorite, quickAd
     </article>)}
   </div>;
 }
+const channelStatus = {
+  pending: 'Публикация начата · проверяем статус',
+  disabled: 'Канал не подключён · товар сохранён',
+  published: 'Опубликовано в Telegram',
+  forbidden: 'Откройте Mini App в Telegram с аккаунта, которому разрешено публиковать в канале',
+  failed: 'Не опубликовано · проверьте подключение',
+  unknown: 'Статус неизвестен · проверьте канал',
+};
+
+function ChannelPreview({ product }) {
+  return <details className="channel-preview">
+    <summary><strong>Пост в Telegram</strong><span>Предпросмотр</span></summary>
+    <p>Когда канал подключён, бот автоматически публикует новые товары после сохранения.</p>
+    <div className="channel-preview-card">
+      {product.images[0] && <img src={product.images[0]} alt="Фото для поста"/>}
+      <div className="channel-preview-text">{formatChannelPost({ ...product, category: categoryName(product.category) })}</div>
+      <div className="channel-preview-link">Открыть магазин <ArrowRight size={14}/></div>
+    </div>
+  </details>;
+}
 function AdminProducts({ products, category, setCategory, query, setQuery, onEdit }) {
   const [limit, setLimit] = useState(20);
   useEffect(() => setLimit(20), [category, query]);
@@ -201,7 +258,7 @@ function AdminProducts({ products, category, setCategory, query, setQuery, onEdi
     <label className="search admin-search"><Search size={18}/><input aria-label="Поиск товаров в админке" placeholder="Название или артикул" value={query} onChange={e => setQuery(e.target.value)}/>{query && <button aria-label="Очистить поиск" onClick={() => setQuery('')}><X size={16}/></button>}</label>
     <div className="admin-results"><strong>{label}</strong><span role="status">Найдено: {items.length}</span></div>
     <div className="admin-list" key={category}>
-      {items.slice(0, limit).map(p => <button className="admin-item admin-product-row" key={p.id} onClick={() => onEdit(p)} aria-label={`Редактировать: ${cleanTitle(p)}`}><img src={displayImage(p)} alt=""/><div><small>{categoryName(p.category)}</small><strong>{cleanTitle(p)}</strong><span>{money(p.price)} · {p.stock == null ? 'остаток не указан' : `остаток ${p.stock}`}</span></div><ChevronRight size={18}/></button>)}
+      {items.slice(0, limit).map(p => <button className="admin-item admin-product-row" key={p.id} onClick={() => onEdit(p)} aria-label={`Редактировать: ${cleanTitle(p)}`}><img src={displayImage(p)} alt=""/><div><small>{categoryName(p.category)}</small><strong>{cleanTitle(p)}</strong><span>{money(p.price)} · {p.stock == null ? 'остаток не указан' : `остаток ${p.stock}`}</span>{p.channelPost && <span className="channel-status" data-status={p.channelPost}>{channelStatus[p.channelPost]}</span>}</div><ChevronRight size={18}/></button>)}
       {!items.length && <div className="admin-empty"><Search size={25}/><strong>{term ? 'Ничего не найдено' : 'В категории пока нет товаров'}</strong><p>{term ? 'Попробуйте другое название или артикул.' : 'Добавьте товар и выберите эту категорию в форме.'}</p>{term && <button className="text-link" onClick={() => setQuery('')}>Сбросить поиск</button>}</div>}
     </div>
     {items.length > limit && <button className="admin-load-more" onClick={() => setLimit(n => n + 20)}>Показать ещё <span>{items.length - limit}</span><Plus size={16}/></button>}
