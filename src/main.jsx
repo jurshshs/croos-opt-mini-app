@@ -9,6 +9,7 @@ import { CHANNEL_PHOTO_LIMIT, formatChannelPost } from './channel-post';
 import { checkAdminAccess, publishProduct } from './publish-product';
 import { compressUpload } from './product-photo';
 import { loadProducts, updateProducts } from './product-storage';
+import { notifyOrderGroup } from './submit-order';
 import './admin.css';
 import './refinement.css';
 
@@ -16,7 +17,7 @@ const tg = window.Telegram?.WebApp;
 tg?.ready(); tg?.expand();
 const cleanTitle = p => p.title.split('(')[0].trim();
 const displayImage = p => p?.images?.[0] || '';
-const createOrderId = () => 'CR-' + Date.now().toString(36).toUpperCase();
+const createOrderId = () => 'CR-' + crypto.randomUUID().slice(0, 13).toUpperCase();
 
 function App() {
   const [splash, setSplash] = useState(() => window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'none' : 'intro');
@@ -44,6 +45,8 @@ function App() {
   const [processingPhotos, setProcessingPhotos] = useState(false);
   const photoJob = useRef(null);
   const [completed, setCompleted] = useState(null);
+  const [sendingOrder, setSendingOrder] = useState(false);
+  const orderDelivery = useRef(null);
   const [error, setError] = useState('');
   const [checkout, setCheckout] = useState({ fullName: '', phone: '', city: '', branch: '', height: '', weight: '', shoeSizes: {} });
   useEffect(() => {
@@ -111,8 +114,12 @@ function App() {
   const shoes = lines.filter(x => x.product.category === 'shoes');
   const hasClothes = shoes.length < lines.length;
   function toggleFavorite(id) { setFavorites(old => old.includes(id) ? old.filter(x => x !== id) : [...old, id]); }
-  function submitOrder(e) {
+  async function submitOrder(e) {
     e.preventDefault(); setError('');
+    if (orderDelivery.current?.status === 'sending') return;
+    if (orderDelivery.current?.status === 'unknown') {
+      return setError(`Заказ ${orderDelivery.current.id} мог поступить продавцу. Уточните его статус перед повторным заказом.`);
+    }
     if (!lines.length) return setError('Корзина пуста');
     if (checkout.fullName.trim().split(/\s+/).length < 2) return setError('Укажите фамилию и имя получателя');
     if (!/^\+?\d[\d\s()-]{7,18}$/.test(checkout.phone.trim()) || checkout.phone.replace(/\D/g,'').length < 9) return setError('Проверьте номер телефона');
@@ -120,7 +127,7 @@ function App() {
     if (hasClothes && ![checkout.height, checkout.weight].every(v => Number.isFinite(Number(v)) && Number(v) >= 1)) return setError('Укажите рост и вес');
     if (shoes.some(x => x.size === 'Без размера' && !checkout.shoeSizes[x.id]?.trim())) return setError('Укажите размер обуви');
     const order = {
-      id: createOrderId(), createdAt: new Date().toLocaleString('ru-BY'), status: 'Новый', total,
+      id: orderDelivery.current?.id || createOrderId(), createdAt: new Date().toLocaleString('ru-BY'), status: 'Новый', total,
       items: lines.map(x => ({
         title: cleanTitle(x.product), quantity: x.quantity, price: x.product.price,
         size: x.product.category === 'shoes' && x.size === 'Без размера' ? checkout.shoeSizes[x.id].trim() : x.size,
@@ -132,7 +139,17 @@ function App() {
       },
       payment: 'Наложенный платёж через Европочту',
     };
-    setOrders(old => [order, ...old]); setCart([]); setCompleted(order); go('success'); tg?.HapticFeedback?.notificationOccurred('success');
+    orderDelivery.current = { id: order.id, status: 'sending' };
+    setSendingOrder(true);
+    const delivery = await notifyOrderGroup(order, tg?.initData);
+    setSendingOrder(false);
+    orderDelivery.current = { id: order.id, status: delivery };
+    if (delivery === 'unknown') return setError(`Заказ ${order.id} мог поступить продавцу. Уточните его статус перед повторным заказом.`);
+    if (delivery === 'forbidden') return setError('Откройте магазин заново из Telegram, чтобы отправить заказ продавцу.');
+    if (delivery === 'invalid') return setError('Проверьте данные доставки и содержимое корзины.');
+    if (delivery === 'failed') return setError('Заказ не дошёл до продавца. Попробуйте отправить ещё раз.');
+    orderDelivery.current = null;
+    setOrders(old => [order, ...old]); setCart([]); setCompleted({ ...order, delivery }); go('success'); tg?.HapticFeedback?.notificationOccurred('success');
   }
   function openEditor(product) {
     if (!adminAllowed) return;
@@ -255,11 +272,11 @@ function App() {
           </fieldset>
           <div className="summary-total checkout-total"><span>Сумма товаров</span><b>{money(total)}</b></div>
           {error && <p className="form-error" role="alert">{error}</p>}
-          <button className="yellow-button full" type="submit">Подтвердить заказ <Check size={20}/></button>
-          <p className="field-help center">Демо: заказ сохраняется только на этом устройстве.</p>
+          <button className="yellow-button full" type="submit" disabled={sendingOrder}>{sendingOrder ? 'Отправляем заказ…' : 'Подтвердить заказ'} <Check size={20}/></button>
+          <p className="field-help center">Данные заказа и ваш Telegram-ник будут переданы продавцу для связи и доставки.</p>
         </form> : <Empty text="Корзина пока пуста" action={() => showCategory('all')}/>}
       </section>}
-      {page === 'success' && completed && <section className="section success-page"><div className="success-icon"><Check size={38}/></div><small>ЗАКАЗ СОХРАНЁН ЛОКАЛЬНО</small><h1>Спасибо!</h1><p>Номер заказа <b>{completed.id}</b></p><div className="receipt"><strong>Состав заказа</strong>{completed.items.map((x,i) => <div key={i}>{x.title} · {x.size} × {x.quantity}<b>{money(x.price*x.quantity)}</b></div>)}<div className="receipt-total">Сумма товаров <b>{money(completed.total)}</b></div></div><div className="receipt"><strong>Данные получателя</strong><p>{completed.customer.fullName}<br/>{completed.customer.phone}<br/>{completed.customer.city}, {completed.customer.branch}<br/>{completed.customer.height && <>Рост {completed.customer.height} см · Вес {completed.customer.weight} кг<br/></>}{completed.payment}</p></div><p className="field-help">Это демонстрационный заказ. Отправление не создано.</p><button className="yellow-button full" onClick={() => go('home')}>На главную <ArrowRight size={20}/></button></section>}
+      {page === 'success' && completed && <section className="section success-page"><div className="success-icon"><Check size={38}/></div><small>{completed.delivery === 'sent' ? 'ЗАКАЗ ПЕРЕДАН ПРОДАВЦУ' : 'ЗАКАЗ СОХРАНЁН ЛОКАЛЬНО'}</small><h1>Спасибо!</h1><p>Номер заказа <b>{completed.id}</b></p><div className="receipt"><strong>Состав заказа</strong>{completed.items.map((x,i) => <div key={i}>{x.title} · {x.size} × {x.quantity}<b>{money(x.price*x.quantity)}</b></div>)}<div className="receipt-total">Сумма товаров <b>{money(completed.total)}</b></div></div><div className="receipt"><strong>Данные получателя</strong><p>{completed.customer.fullName}<br/>{completed.customer.phone}<br/>{completed.customer.city}, {completed.customer.branch}<br/>{completed.customer.height && <>Рост {completed.customer.height} см · Вес {completed.customer.weight} кг<br/></>}{completed.payment}</p></div><p className="field-help">{completed.delivery === 'sent' ? 'Продавец свяжется с вами для подтверждения.' : 'Это демонстрационный заказ. Отправление не создано.'}</p><button className="yellow-button full" onClick={() => go('home')}>На главную <ArrowRight size={20}/></button></section>}
       {page === 'profile' && <section className="section profile-page"><div className="page-head"><small>ЛИЧНЫЙ КАБИНЕТ</small><h1>Профиль<span className="accent-dot">.</span></h1></div><div className="profile-card"><div className="avatar"><UserRound/></div><div><strong>{tg?.initDataUnsafe?.user?.first_name || 'Гость'}</strong><span>{tg ? 'Telegram Mini App' : 'Локальный просмотр'}</span></div><ChevronRight/></div><button className="profile-row" onClick={() => go('orders')}><Package/> Мои заказы <span>{orders.length + demoOrders.length}</span><ChevronRight/></button><button className="profile-row" onClick={() => go('favorites')}><Heart/> Избранное <span>{favorites.length}</span><ChevronRight/></button>{adminAllowed && <button className="yellow-button full" onClick={() => go('admin')}><Crown size={20}/> Открыть админ-панель <ArrowRight size={20}/></button>}</section>}
       {page === 'favorites' && <section className="section"><div className="page-head"><small>СОХРАНЕНО</small><h1>Избранное<span className="accent-dot">.</span></h1></div><ProductGrid products={products.filter(p => favorites.includes(p.id))} openProduct={openProduct} favorites={favorites} toggleFavorite={toggleFavorite} quickAdd={quickAdd}/>{favorites.length === 0 && <Empty text="Здесь пока пусто" action={() => showCategory('all')}/>}</section>}
       {page === 'orders' && <section className="section"><div className="page-head"><small>ИСТОРИЯ</small><h1>Мои заказы<span className="accent-dot">.</span></h1></div>{[...orders,...demoOrders].map(o => <OrderCard key={o.id} order={o}/>)}</section>}
