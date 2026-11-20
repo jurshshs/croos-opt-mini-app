@@ -1,7 +1,7 @@
 import { CHANNEL_PHOTO_LIMIT, formatChannelPost } from '../src/channel-post.js';
 import { verifiedUser } from '../server/telegram-auth.js';
 
-const adminHandles = new Set(['ttfight27', 'miltorzz']);
+const adminHandles = new Set(['ttfight27', 'miltorzz', 'vlagm']);
 const isAdmin = user => typeof user?.username === 'string' && adminHandles.has(user.username.toLowerCase());
 const isJpeg = photo => typeof photo === 'string' && photo.length <= 400_000
   && /^data:image\/jpeg;base64,[a-zA-Z0-9+/]+={0,2}$/.test(photo);
