@@ -5,8 +5,8 @@ import { STORE_NAME } from './config';
 import { seedProducts, categories, categoryName, money, read, write, demoOrders } from './data';
 import './style.css';
 import './motion.css';
-import { formatChannelPost } from './channel-post';
-import { publishProduct } from './publish-product';
+import { CHANNEL_PHOTO_LIMIT, formatChannelPost } from './channel-post';
+import { checkAdminAccess, publishProduct } from './publish-product';
 import { compressUpload } from './product-photo';
 import { loadProducts, updateProducts } from './product-storage';
 import './admin.css';
@@ -30,7 +30,7 @@ function App() {
   const [cart, setCart] = useState(() => read('cart', []));
   const [orders, setOrders] = useState(() => read('orders', []));
   const [favorites, setFavorites] = useState(() => read('favorites', []));
-  const [role, setRole] = useState(() => read('role', 'buyer'));
+  const [adminAllowed, setAdminAllowed] = useState(false);
   const [category, setCategory] = useState('all');
   const [adminCategory, setAdminCategory] = useState('all');
   const [adminQuery, setAdminQuery] = useState('');
@@ -60,10 +60,19 @@ function App() {
   useEffect(() => write('cart', cart), [cart]);
   useEffect(() => write('orders', orders), [orders]);
   useEffect(() => write('favorites', favorites), [favorites]);
-  useEffect(() => write('role', role), [role]);
   useEffect(() => { if (!toast) return; const timer = window.setTimeout(() => setToast(''), 2300); return () => window.clearTimeout(timer); }, [toast]);
   useEffect(() => { if (tg?.BackButton) { if (['home','catalog','cart','profile'].includes(page)) tg.BackButton.hide(); else { tg.BackButton.show(); tg.BackButton.onClick(back); } return () => tg.BackButton.offClick(back); } }, [page, previous]);
-  useEffect(() => { if (new URLSearchParams(location.search).get('view') === 'admin') { setRole('seller'); setPage('admin'); } }, []);
+  useEffect(() => {
+    let active = true;
+    const adminRequested = new URLSearchParams(location.search).get('view') === 'admin';
+    checkAdminAccess(tg?.initData).then(allowed => {
+      if (!active) return;
+      setAdminAllowed(allowed);
+      if (adminRequested && allowed) setPage('admin');
+      if (adminRequested && !allowed) setToast('Войдите через Telegram с аккаунта продавца');
+    });
+    return () => { active = false; };
+  }, []);
   const count = cart.reduce((n, x) => n + x.quantity, 0);
   const lines = cart.map(x => ({ ...x, product: products.find(p => p.id === x.id) })).filter(x => x.product);
   const total = lines.reduce((n, x) => n + (x.product.price || 0) * x.quantity, 0);
@@ -126,6 +135,7 @@ function App() {
     setOrders(old => [order, ...old]); setCart([]); setCompleted(order); go('success'); tg?.HapticFeedback?.notificationOccurred('success');
   }
   function openEditor(product) {
+    if (!adminAllowed) return;
     photoJob.current = null;
     setProcessingPhotos(false);
     setEditor(product);
@@ -156,7 +166,7 @@ function App() {
     setProcessingPhotos(false);
   }
   async function deleteProduct() {
-    if (savingProduct.current || !confirm('Удалить товар?')) return;
+    if (!adminAllowed || savingProduct.current || !confirm('Удалить товар?')) return;
     savingProduct.current = true;
     try {
       const updated = await updateProducts(products, items => items.filter(p => p.id !== editor.id));
@@ -170,7 +180,7 @@ function App() {
   }
   async function saveProduct(event) {
     event.preventDefault();
-    if (!catalogReady || savingProduct.current || photoJob.current) return;
+    if (!adminAllowed || !catalogReady || savingProduct.current || photoJob.current) return;
     if (!editor.title.trim()) return setError('Добавьте название');
     const isNew = !editor.id;
     const id = editor.id || 'local-' + crypto.randomUUID();
@@ -196,7 +206,7 @@ function App() {
     }
     go('admin');
     if (isNew) {
-      const status = await publishProduct({ ...product, category: categoryName(product.category) }, tg?.initData);
+      const status = await publishProduct(product, tg?.initData);
       const applyStatus = items => items.map(p => p.id === id ? { ...p, channelPost: status } : p);
       try {
         setProducts(await updateProducts(products, applyStatus));
@@ -250,11 +260,11 @@ function App() {
         </form> : <Empty text="Корзина пока пуста" action={() => showCategory('all')}/>}
       </section>}
       {page === 'success' && completed && <section className="section success-page"><div className="success-icon"><Check size={38}/></div><small>ЗАКАЗ СОХРАНЁН ЛОКАЛЬНО</small><h1>Спасибо!</h1><p>Номер заказа <b>{completed.id}</b></p><div className="receipt"><strong>Состав заказа</strong>{completed.items.map((x,i) => <div key={i}>{x.title} · {x.size} × {x.quantity}<b>{money(x.price*x.quantity)}</b></div>)}<div className="receipt-total">Сумма товаров <b>{money(completed.total)}</b></div></div><div className="receipt"><strong>Данные получателя</strong><p>{completed.customer.fullName}<br/>{completed.customer.phone}<br/>{completed.customer.city}, {completed.customer.branch}<br/>{completed.customer.height && <>Рост {completed.customer.height} см · Вес {completed.customer.weight} кг<br/></>}{completed.payment}</p></div><p className="field-help">Это демонстрационный заказ. Отправление не создано.</p><button className="yellow-button full" onClick={() => go('home')}>На главную <ArrowRight size={20}/></button></section>}
-      {page === 'profile' && <section className="section profile-page"><div className="page-head"><small>ЛИЧНЫЙ КАБИНЕТ</small><h1>Профиль<span className="accent-dot">.</span></h1></div><div className="profile-card"><div className="avatar"><UserRound/></div><div><strong>{tg?.initDataUnsafe?.user?.first_name || 'Гость'}</strong><span>{tg ? 'Telegram Mini App' : 'Локальный просмотр'}</span></div><ChevronRight/></div><button className="profile-row" onClick={() => go('orders')}><Package/> Мои заказы <span>{orders.length + demoOrders.length}</span><ChevronRight/></button><button className="profile-row" onClick={() => go('favorites')}><Heart/> Избранное <span>{favorites.length}</span><ChevronRight/></button><div className="demo-role"><strong>Режим для локального тестирования</strong><p>Переключатель не является защитой доступа.</p><button onClick={() => setRole(role === 'buyer' ? 'seller' : 'buyer')}>{role === 'buyer' ? 'Включить роль продавца' : 'Вернуться к роли покупателя'}</button></div>{role === 'seller' && <button className="yellow-button full" onClick={() => go('admin')}><Crown size={20}/> Открыть админ-панель <ArrowRight size={20}/></button>}</section>}
+      {page === 'profile' && <section className="section profile-page"><div className="page-head"><small>ЛИЧНЫЙ КАБИНЕТ</small><h1>Профиль<span className="accent-dot">.</span></h1></div><div className="profile-card"><div className="avatar"><UserRound/></div><div><strong>{tg?.initDataUnsafe?.user?.first_name || 'Гость'}</strong><span>{tg ? 'Telegram Mini App' : 'Локальный просмотр'}</span></div><ChevronRight/></div><button className="profile-row" onClick={() => go('orders')}><Package/> Мои заказы <span>{orders.length + demoOrders.length}</span><ChevronRight/></button><button className="profile-row" onClick={() => go('favorites')}><Heart/> Избранное <span>{favorites.length}</span><ChevronRight/></button>{adminAllowed && <button className="yellow-button full" onClick={() => go('admin')}><Crown size={20}/> Открыть админ-панель <ArrowRight size={20}/></button>}</section>}
       {page === 'favorites' && <section className="section"><div className="page-head"><small>СОХРАНЕНО</small><h1>Избранное<span className="accent-dot">.</span></h1></div><ProductGrid products={products.filter(p => favorites.includes(p.id))} openProduct={openProduct} favorites={favorites} toggleFavorite={toggleFavorite} quickAdd={quickAdd}/>{favorites.length === 0 && <Empty text="Здесь пока пусто" action={() => showCategory('all')}/>}</section>}
       {page === 'orders' && <section className="section"><div className="page-head"><small>ИСТОРИЯ</small><h1>Мои заказы<span className="accent-dot">.</span></h1></div>{[...orders,...demoOrders].map(o => <OrderCard key={o.id} order={o}/>)}</section>}
-      {page === 'admin' && role === 'seller' && <section className="section admin-page"><div className="page-head"><small>ЛОКАЛЬНЫЙ ДЕМО-РЕЖИМ</small><h1>Панель продавца<span className="accent-dot">.</span></h1><p>Изменения видны только на этом устройстве.</p></div><div className="admin-stats"><div><span>Товары</span><strong>{products.length}</strong></div><div><span>Заказы</span><strong>{orders.length}</strong></div></div><div className="section-title"><h2>Товары</h2><button className="small-yellow" disabled={!catalogReady} onClick={() => openEditor({ id:'', title:'', description:'', category:categories[0]?.id || 'other', price:'', sizes:'', stock:'', images:[] })}><Plus size={17}/> Добавить</button></div><AdminProducts products={products} category={adminCategory} setCategory={setAdminCategory} query={adminQuery} setQuery={setAdminQuery} onEdit={p => catalogReady && openEditor({ ...p, price:p.price ?? '', stock:p.stock ?? '', sizes:p.sizes.join(', ') })}/><div className="section-title"><h2>Заказы</h2></div>{orders.length ? orders.map(o => <div className="admin-order" key={o.id}><div><strong>{o.id}</strong><span>{o.customer.fullName} · {money(o.total)}</span><span>{o.customer.phone}</span><span>{o.customer.city}, {o.customer.branch}</span>{o.customer.height && <span>Рост {o.customer.height} см · Вес {o.customer.weight} кг</span>}<span>{o.items.map(item => `${item.title} · ${item.size} × ${item.quantity}`).join(' / ')}</span></div><select value={o.status} onChange={e => setOrders(old => old.map(x => x.id === o.id ? { ...x, status:e.target.value } : x))}>{['Новый','В обработке','Отправлен','Доставлен','Отменён'].map(s => <option key={s}>{s}</option>)}</select></div>) : <p className="muted">Новых заказов на этом устройстве нет.</p>}</section>}
-      {page === 'editor' && role === 'seller' && editor && <section className="section form-page"><div className="page-head"><small>КАТАЛОГ</small><h1>{editor.id ? 'Редактировать' : 'Новый товар'}<span className="accent-dot">.</span></h1></div><form onSubmit={saveProduct}><Field label="Название" value={editor.title} onChange={v => setEditor({ ...editor,title:v })} required/><label className="field">Категория<select value={editor.category} onChange={e => setEditor({ ...editor,category:e.target.value })}>{categories.map(c => <option value={c.id} key={c.id}>{c.label}</option>)}</select></label><Field label="Цена, BYN" value={editor.price} onChange={v => setEditor({ ...editor,price:v })} type="number" placeholder="Не указана"/><Field label="Размеры через запятую" value={editor.sizes} onChange={v => setEditor({ ...editor,sizes:v })} placeholder="S, M, L"/><Field label="Остаток" value={editor.stock} onChange={v => setEditor({ ...editor,stock:v })} type="number" placeholder="Не указан"/><label className="field">Описание<textarea value={editor.description} onChange={e => setEditor({ ...editor,description:e.target.value })}/></label><label className="upload"><ImagePlus/><span>{processingPhotos ? 'Сжимаем фотографии…' : 'Добавить фотографии'}</span><input type="file" accept="image/*" multiple disabled={processingPhotos} onChange={addProductPhotos}/></label><p className="field-help" aria-live="polite">{processingPhotos ? 'Дождитесь обработки фотографий.' : 'Фото автоматически сжимаются при загрузке.'}</p><div className="editor-images">{editor.images.map((src,i) => <div key={i}><img src={src} alt=""/><button type="button" onClick={() => setEditor({ ...editor,images:editor.images.filter((_,j) => j !== i) })}><X size={15}/></button></div>)}</div>{!editor.id && <ChannelPreview product={editor}/>}{error && <p className="form-error">{error}</p>}<button className="yellow-button full" type="submit" disabled={processingPhotos}>Сохранить товар <Check size={20}/></button>{editor.id && <button className="delete-button" type="button" disabled={processingPhotos} onClick={deleteProduct}><Trash2 size={17}/> Удалить товар</button>}</form></section>}
+      {page === 'admin' && adminAllowed && <section className="section admin-page"><div className="page-head"><small>ЛОКАЛЬНЫЙ ДЕМО-РЕЖИМ</small><h1>Панель продавца<span className="accent-dot">.</span></h1><p>Изменения видны только на этом устройстве.</p></div><div className="admin-stats"><div><span>Товары</span><strong>{products.length}</strong></div><div><span>Заказы</span><strong>{orders.length}</strong></div></div><div className="section-title"><h2>Товары</h2><button className="small-yellow" disabled={!catalogReady} onClick={() => openEditor({ id:'', title:'', description:'', category:categories[0]?.id || 'other', price:'', sizes:'', stock:'', images:[] })}><Plus size={17}/> Добавить</button></div><AdminProducts products={products} category={adminCategory} setCategory={setAdminCategory} query={adminQuery} setQuery={setAdminQuery} onEdit={p => catalogReady && openEditor({ ...p, price:p.price ?? '', stock:p.stock ?? '', sizes:p.sizes.join(', ') })}/><div className="section-title"><h2>Заказы</h2></div>{orders.length ? orders.map(o => <div className="admin-order" key={o.id}><div><strong>{o.id}</strong><span>{o.customer.fullName} · {money(o.total)}</span><span>{o.customer.phone}</span><span>{o.customer.city}, {o.customer.branch}</span>{o.customer.height && <span>Рост {o.customer.height} см · Вес {o.customer.weight} кг</span>}<span>{o.items.map(item => `${item.title} · ${item.size} × ${item.quantity}`).join(' / ')}</span></div><select value={o.status} onChange={e => setOrders(old => old.map(x => x.id === o.id ? { ...x, status:e.target.value } : x))}>{['Новый','В обработке','Отправлен','Доставлен','Отменён'].map(s => <option key={s}>{s}</option>)}</select></div>) : <p className="muted">Новых заказов на этом устройстве нет.</p>}</section>}
+      {page === 'editor' && adminAllowed && editor && <section className="section form-page"><div className="page-head"><small>КАТАЛОГ</small><h1>{editor.id ? 'Редактировать' : 'Новый товар'}<span className="accent-dot">.</span></h1></div><form onSubmit={saveProduct}><Field label="Название" value={editor.title} onChange={v => setEditor({ ...editor,title:v })} required/><label className="field">Категория<select value={editor.category} onChange={e => setEditor({ ...editor,category:e.target.value })}>{categories.map(c => <option value={c.id} key={c.id}>{c.label}</option>)}</select></label><Field label="Цена, BYN" value={editor.price} onChange={v => setEditor({ ...editor,price:v })} type="number" placeholder="Не указана"/><Field label="Размеры через запятую" value={editor.sizes} onChange={v => setEditor({ ...editor,sizes:v })} placeholder="S, M, L"/><Field label="Остаток" value={editor.stock} onChange={v => setEditor({ ...editor,stock:v })} type="number" placeholder="Не указан"/><label className="field">Описание<textarea value={editor.description} onChange={e => setEditor({ ...editor,description:e.target.value })}/></label><label className="upload"><ImagePlus/><span>{processingPhotos ? 'Сжимаем фотографии…' : 'Добавить фотографии'}</span><input type="file" accept="image/*" multiple disabled={processingPhotos} onChange={addProductPhotos}/></label><p className="field-help" aria-live="polite">{processingPhotos ? 'Дождитесь обработки фотографий.' : 'Фото автоматически сжимаются при загрузке.'}</p><div className="editor-images">{editor.images.map((src,i) => <div key={i}><img src={src} alt=""/><button type="button" onClick={() => setEditor({ ...editor,images:editor.images.filter((_,j) => j !== i) })}><X size={15}/></button></div>)}</div>{!editor.id && <ChannelPreview product={editor}/>}{error && <p className="form-error">{error}</p>}<button className="yellow-button full" type="submit" disabled={processingPhotos}>Сохранить товар <Check size={20}/></button>{editor.id && <button className="delete-button" type="button" disabled={processingPhotos} onClick={deleteProduct}><Trash2 size={17}/> Удалить товар</button>}</form></section>}
     </main>
     {page === 'product' && current && <div className="purchase-bar">
       <button className="yellow-button full" disabled={current.price == null || current.stock === 0} onClick={() => addCart(current)}>
@@ -288,19 +298,21 @@ const channelStatus = {
   pending: 'Публикация начата · проверяем статус',
   disabled: 'Канал не подключён · товар сохранён',
   published: 'Опубликовано в Telegram',
-  forbidden: 'Откройте Mini App в Telegram с аккаунта, которому разрешено публиковать в канале',
+  forbidden: 'Откройте Mini App заново через Telegram с аккаунта продавца',
   failed: 'Не опубликовано · проверьте подключение',
   unknown: 'Статус неизвестен · проверьте канал',
 };
 
 function ChannelPreview({ product }) {
+  const photos = product.images.slice(0, CHANNEL_PHOTO_LIMIT);
   return <details className="channel-preview">
     <summary><strong>Пост в Telegram</strong><span>Предпросмотр</span></summary>
-    <p>Когда канал подключён, бот автоматически публикует новые товары после сохранения.</p>
+    <p>Бот публикует новый товар после сохранения. В пост попадут первые {CHANNEL_PHOTO_LIMIT} фото.</p>
     <div className="channel-preview-card">
-      {product.images[0] && <img src={product.images[0]} alt="Фото для поста"/>}
-      <div className="channel-preview-text">{formatChannelPost({ ...product, category: categoryName(product.category) })}</div>
-      <div className="channel-preview-link">Открыть магазин <ArrowRight size={14}/></div>
+      {photos.length > 0 && <div className={photos.length > 1 ? 'channel-preview-album' : undefined}>
+        {photos.map((src, index) => <img key={index} src={src} alt={`Фото ${index + 1} для поста`}/>)}
+      </div>}
+      <div className="channel-preview-text">{formatChannelPost(product)}</div>
     </div>
   </details>;
 }
